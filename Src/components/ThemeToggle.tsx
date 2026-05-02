@@ -1,65 +1,47 @@
+import { Moon, Sun } from 'lucide-react';
 import { motion } from 'motion/react';
-import { GraduationCap } from 'lucide-react';
+import { useTheme } from './ThemeContext';
+import { cn } from '../lib/utils';
 
-export default function LoadingScreen() {
+export default function ThemeToggle({ scrolled }: { scrolled?: boolean }) {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <div className="fixed inset-0 z-[100] flex pointer-events-none">
+    <button
+      onClick={toggleTheme}
+      className={cn(
+        "relative flex items-center h-8 md:h-10 px-1 rounded-full transition-all duration-500 border overflow-hidden",
+        scrolled 
+          ? "border-paper/20 bg-white/10" 
+          : theme === 'dark' 
+            ? "border-paper/20 bg-white/5" 
+            : "border-navy/10 bg-navy/5"
+      )}
+      aria-label="Toggle Theme"
+      style={{ width: '60px' }}
+    >
       <motion.div
-        initial={{ x: 0 }}
-        animate={{ x: '-100%' }}
-        transition={{ duration: 1, delay: 2, ease: [0.87, 0, 0.13, 1] }}
-        className="flex-1 bg-navy"
-      />
-      <motion.div
-        initial={{ x: 0 }}
-        animate={{ x: '100%' }}
-        transition={{ duration: 1, delay: 2, ease: [0.87, 0, 0.13, 1] }}
-        className="flex-1 bg-navy"
+        className={cn(
+          "absolute inset-y-1 w-6 md:w-8 rounded-full transition-colors duration-500 shadow-lg",
+          theme === 'dark' ? "bg-gold" : "bg-navy"
+        )}
+        animate={{ x: theme === 'dark' ? 24 : 0 }}
+        transition={{ type: "spring", stiffness: 400, damping: 30 }}
       />
       
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-gold">
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1.2, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-8"
-        >
-          <div className="w-24 h-24 border-2 border-gold rounded-sm flex items-center justify-center">
-            <GraduationCap className="w-12 h-12" />
-          </div>
-        </motion.div>
-        
-        <div className="overflow-hidden">
-          <motion.h1
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-serif text-3xl tracking-[0.4em] uppercase"
-          >
-            Aurelius
-          </motion.h1>
-        </div>
-        
-        <div className="mt-8 overflow-hidden h-px w-48 bg-gold/20">
-          <motion.div
-            initial={{ x: "-100%" }}
-            animate={{ x: "100%" }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="h-full w-full bg-gold"
-          />
-        </div>
-
-        <motion.div
-          animate={{ 
-            opacity: [1, 0],
-            scale: [1, 4]
-          }}
-          transition={{ duration: 1, delay: 1.8, ease: "easeIn" }}
-          className="absolute inset-0 flex items-center justify-center pointer-events-none"
-        >
-          <div className="w-32 h-32 border border-gold/30 rounded-full" />
-        </motion.div>
+      <div className={cn(
+        "relative z-10 w-6 md:w-8 h-full flex items-center justify-center transition-colors duration-500",
+        theme === 'light' ? "text-paper" : "text-paper/30"
+      )}>
+        <Sun size={12} className="md:size-[14px]" />
       </div>
-    </div>
+      
+      <div className={cn(
+        "relative z-10 w-6 md:w-8 h-full flex items-center justify-center transition-colors duration-500",
+        theme === 'dark' ? "text-navy" : scrolled ? "text-paper/30" : "text-navy/30"
+      )}>
+        <Moon size={12} className="md:size-[14px]" />
+      </div>
+    </button>
   );
 }
