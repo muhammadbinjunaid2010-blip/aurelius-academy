@@ -174,8 +174,24 @@ export default function Navbar() {
               <div className="flex justify-between text-[10px] uppercase tracking-[0.3em] font-black text-navy/30 dark:text-paper/30 pb-4">
                 <span>Admissions: +44 123 456 789</span>
                 <div className="flex gap-4">
-                  <span className="hover:text-gold cursor-pointer transition-colors">IG</span>
-                  <span className="hover:text-gold cursor-pointer transition-colors">TW</span>
+                  <span 
+                    className="hover:text-gold cursor-pointer transition-colors"
+                    onClick={() => alert("Instagram is currently under maintenance.")}
+                  >
+                    IG
+                  </span>
+                  <span 
+                    className="hover:text-gold cursor-pointer transition-colors"
+                    onClick={() => alert("Twitter is currently under maintenance.")}
+                  >
+                    TW
+                  </span>
+                  <span 
+                    className="hover:text-gold cursor-pointer transition-colors"
+                    onClick={() => alert("LinkedIn is currently under maintenance.")}
+                  >
+                    LI
+                  </span>
                 </div>
               </div>
             </motion.div>

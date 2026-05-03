@@ -10,7 +10,7 @@ export default function ThemeToggle({ scrolled }: { scrolled?: boolean }) {
     <button
       onClick={toggleTheme}
       className={cn(
-        "relative flex items-center h-8 md:h-10 px-1 rounded-full transition-all duration-500 border overflow-hidden",
+        "relative flex items-center h-8 md:h-9 rounded-full transition-all duration-500 border overflow-hidden",
         scrolled 
           ? "border-paper/20 bg-white/10" 
           : theme === 'dark' 
@@ -18,29 +18,29 @@ export default function ThemeToggle({ scrolled }: { scrolled?: boolean }) {
             : "border-navy/10 bg-navy/5"
       )}
       aria-label="Toggle Theme"
-      style={{ width: '60px' }}
+      style={{ width: '56px' }}
     >
       <motion.div
         className={cn(
-          "absolute inset-y-1 w-6 md:w-8 rounded-full transition-colors duration-500 shadow-lg",
+          "absolute top-1 bottom-1 w-6 rounded-full transition-colors duration-500 shadow-lg z-0",
           theme === 'dark' ? "bg-gold" : "bg-navy"
         )}
-        animate={{ x: theme === 'dark' ? 24 : 0 }}
-        transition={{ type: "spring", stiffness: 400, damping: 30 }}
+        animate={{ x: theme === 'dark' ? 28 : 2 }}
+        transition={{ type: "spring", stiffness: 500, damping: 30 }}
       />
       
       <div className={cn(
-        "relative z-10 w-6 md:w-8 h-full flex items-center justify-center transition-colors duration-500",
+        "absolute left-0 w-[28px] h-full flex items-center justify-center transition-colors duration-500 z-10",
         theme === 'light' ? "text-paper" : "text-paper/30"
       )}>
-        <Sun size={12} className="md:size-[14px]" />
+        <Sun size={12} />
       </div>
       
       <div className={cn(
-        "relative z-10 w-6 md:w-8 h-full flex items-center justify-center transition-colors duration-500",
+        "absolute right-0 w-[28px] h-full flex items-center justify-center transition-colors duration-500 z-10",
         theme === 'dark' ? "text-navy" : scrolled ? "text-paper/30" : "text-navy/30"
       )}>
-        <Moon size={12} className="md:size-[14px]" />
+        <Moon size={12} />
       </div>
     </button>
   );

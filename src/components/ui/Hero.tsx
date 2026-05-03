@@ -9,21 +9,21 @@ export default function Hero() {
   const { ref, x, y } = useMagnetic();
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center p-6 md:p-12">
+    <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center p-6 md:p-12 mb-0">
       {/* Background Image with Parallax */}
       <motion.div 
         style={{ y: y1 }}
         className="absolute inset-0 z-0"
       >
         <img
-          src="/school background.jpg"
+          src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=2070&auto=format&fit=crop"
           alt="Academy Background"
-          className="w-full h-[120%] object-cover brightness-[0.4]"
+          className="w-full h-[140%] object-cover brightness-[0.35] scale-110"
           referrerPolicy="no-referrer"
         />
       </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full text-center md:text-left">
+      <div className="relative z-10 max-w-7xl mx-auto w-full text-center md:text-left pt-24 md:pt-32">
         <div className="overflow-hidden mb-4">
           <motion.p
             initial={{ y: "100%" }}
@@ -40,10 +40,10 @@ export default function Hero() {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
-            className="text-white text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-serif leading-[0.95] md:leading-[0.9] tracking-tighter"
+            className="text-white text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-serif leading-[1.1] md:leading-[1.05] tracking-tighter"
           >
             The Future <br /> 
-            <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light">Belongs</span> To You
+            <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light py-2 inline-block">Belongs</span> To You
           </motion.h1>
         </div>
 
@@ -51,7 +51,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col md:flex-row gap-6 mt-8 md:mt-12 items-center"
+          className="flex flex-col md:flex-row gap-8 mt-8 md:mt-12 items-center"
         >
           <div ref={ref} className="w-full md:w-auto">
             <motion.div animate={{ x, y }} transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}>

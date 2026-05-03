@@ -2,6 +2,11 @@ import { GraduationCap, Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
+  const handleSocialClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    alert("Our social media channels are currently under maintenance. Please check back later.");
+  };
+
   return (
     <footer className="bg-navy dark:bg-navy-dark text-paper pt-24 pb-12 px-6 md:px-12 border-t border-white/5 transition-colors duration-500">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
@@ -18,13 +23,13 @@ export default function Footer() {
             Cultivating global leaders through academic excellence, character building, and innovative thinking since 1982.
           </p>
           <div className="flex gap-4">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <a href="#" onClick={handleSocialClick}>
               <Twitter className="w-5 h-5 text-paper/40 hover:text-gold cursor-pointer transition-colors" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="#" onClick={handleSocialClick}>
               <Instagram className="w-5 h-5 text-paper/40 hover:text-gold cursor-pointer transition-colors" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="#" onClick={handleSocialClick}>
               <Linkedin className="w-5 h-5 text-paper/40 hover:text-gold cursor-pointer transition-colors" />
             </a>
           </div>

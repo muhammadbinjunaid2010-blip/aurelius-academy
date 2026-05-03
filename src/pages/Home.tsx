@@ -57,7 +57,7 @@ export default function Home() {
               className="relative aspect-square md:aspect-video rounded-sm overflow-hidden shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070&auto=format&fit=crop"
                 alt="Students in library"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

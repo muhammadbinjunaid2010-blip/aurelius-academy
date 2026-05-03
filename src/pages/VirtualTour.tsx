@@ -11,7 +11,7 @@ const LOCATIONS = [
   {
     id: 'grand-hall',
     name: 'The Grand Hall',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=4000',
+    image: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=4000',
     description: 'The architectural heart of Aurelius, where traditions meet innovation.',
     hotspots: [
       { position: [10, 0, -10], title: 'Original 18th Century Organ', detail: 'This pipe organ has been meticulously restored and is used for weekly assemblies.' },
@@ -31,7 +31,7 @@ const LOCATIONS = [
   {
     id: 'sports',
     name: 'Athletic Pavilion',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=4000',
+    image: 'https://images.unsplash.com/photo-1576267423445-b2e88a49612f?auto=format&fit=crop&q=80&w=4000',
     description: 'A professional-grade complex supporting 24 different Olympic and traditional sports.',
     hotspots: [
       { position: [-10, -5, -15], title: 'Glass-walled Fencing Hall', detail: 'One of the finest fencing facilities in the UK.' }
@@ -40,7 +40,7 @@ const LOCATIONS = [
   {
     id: 'dorm',
     name: 'St. George Residence',
-    image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=4000',
+    image: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&q=80&w=4000',
     description: 'Luxury boarding that balances personal privacy with community building.',
     hotspots: [
       { position: [5, 2, -15], title: 'Communal Lounge', detail: 'The social hub of the house, where students gather for tea and discussion.' }
