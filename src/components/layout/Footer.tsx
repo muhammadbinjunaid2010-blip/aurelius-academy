@@ -79,7 +79,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
           <p>© 2026 Aurelius Academy. Prestige in Education.</p>
           <a 
-            href="mailto:muhammadbinjunaid2010@gmail.com"
+            href="https://muhammad-developer.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 hover:text-gold transition-colors group"
           >
             <div className="w-5 h-5 rounded-full border border-white/10 flex items-center justify-center group-hover:border-gold transition-colors">
