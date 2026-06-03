@@ -66,9 +66,9 @@ export default function Programs() {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 md:gap-12">
             <div>
               <h4 className="text-gold uppercase tracking-[0.3em] text-[10px] md:text-xs font-bold mb-6">Educational Tracks</h4>
-              <h1 className="text-5xl md:text-8xl font-serif text-navy dark:text-paper transition-colors duration-500">Academic <br /> Programs</h1>
+              <h1 className="text-5xl md:text-8xl font-serif text-navy transition-colors duration-500">Academic <br /> Programs</h1>
             </div>
-            <p className="text-navy/60 dark:text-paper/60 max-w-lg text-lg leading-relaxed border-l-2 border-gold pl-8">
+            <p className="text-navy/60 max-w-lg text-lg leading-relaxed border-l-2 border-gold pl-8">
               We offer a diverse range of programs designed to nurture unique talents. Each track is customizable to fit the student's aspirations and strengths.
             </p>
           </div>
@@ -84,7 +84,7 @@ export default function Programs() {
               key={program.id}
               onClick={() => setExpandedId(program.id)}
               className={cn(
-                "relative p-12 cursor-pointer bg-white dark:bg-navy border border-navy/5 dark:border-paper/5 shadow-sm overflow-hidden group hover:shadow-2xl transition-all h-[400px] flex flex-col justify-between",
+                "relative p-12 cursor-pointer bg-white border border-navy/5 shadow-sm overflow-hidden group hover:shadow-2xl transition-all h-[400px] flex flex-col justify-between",
                 expandedId === program.id && "z-50"
               )}
             >
@@ -94,13 +94,13 @@ export default function Programs() {
                 <div className="text-gold mb-8 group-hover:scale-110 transition-transform origin-left">
                   {program.icon}
                 </div>
-                <h3 className="text-3xl font-serif text-navy dark:text-paper mb-6 group-hover:text-gold transition-colors">{program.title}</h3>
-                <p className="text-navy/60 dark:text-paper/60 leading-relaxed text-sm">
+                <h3 className="text-3xl font-serif text-navy mb-6 group-hover:text-gold transition-colors">{program.title}</h3>
+                <p className="text-navy/60 leading-relaxed text-sm">
                   {program.description}
                 </p>
               </div>
 
-              <div className="relative z-10 flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-navy dark:text-gold group-hover:text-gold transition-colors">
+              <div className="relative z-10 flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-navy group-hover:text-gold transition-colors">
                 Explore Module <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-2" />
               </div>
             </motion.div>
@@ -121,11 +121,11 @@ export default function Programs() {
             />
             <motion.div
               layoutId={expandedId}
-              className="fixed inset-6 md:inset-20 lg:inset-x-60 lg:inset-y-32 bg-white dark:bg-navy-dark z-[70] shadow-2xl p-12 md:p-24 overflow-y-auto rounded-sm flex flex-col items-start transition-colors duration-500"
+              className="fixed inset-6 md:inset-20 lg:inset-x-60 lg:inset-y-32 bg-white z-[70] shadow-2xl p-12 md:p-24 overflow-y-auto rounded-sm flex flex-col items-start transition-colors duration-500"
             >
               <button
                 onClick={() => setExpandedId(null)}
-                className="absolute top-12 right-12 text-navy/30 dark:text-paper/30 hover:text-navy dark:hover:text-paper uppercase tracking-widest text-xs font-bold transition-colors"
+                className="absolute top-12 right-12 text-navy/30 hover:text-navy uppercase tracking-widest text-xs font-bold transition-colors"
               >
                 Close Module [×]
               </button>
@@ -135,7 +135,7 @@ export default function Programs() {
               </div>
               
               <h4 className="text-gold uppercase tracking-[0.3em] text-xs font-bold mb-4">In-Depth View</h4>
-              <h2 className="text-5xl md:text-7xl font-serif text-navy dark:text-paper mb-12 leading-none">
+              <h2 className="text-5xl md:text-7xl font-serif text-navy mb-12 leading-none">
                 {programs.find(p => p.id === expandedId)?.title}
               </h2>
               
@@ -143,15 +143,15 @@ export default function Programs() {
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div>
-                  <p className="text-xl text-navy/80 dark:text-paper/80 leading-relaxed mb-8">
+                  <p className="text-xl text-navy/80 leading-relaxed mb-8">
                     {programs.find(p => p.id === expandedId)?.description}
                   </p>
-                  <p className="text-navy/60 dark:text-paper/60 leading-loose">
+                  <p className="text-navy/60 leading-loose">
                     {programs.find(p => p.id === expandedId)?.details}
                   </p>
                 </div>
                 <div className="space-y-8">
-                  <div className="aspect-video bg-navy/5 dark:bg-paper/5 rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+                  <div className="aspect-video bg-navy/5 rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
                      <img 
                         src={`https://picsum.photos/seed/${expandedId}/800/600`} 
                         alt="Program facility" 
@@ -168,7 +168,7 @@ export default function Programs() {
               </div>
 
               <div className="mt-16 flex gap-6">
-                <Link to="/admissions" className="bg-navy dark:bg-gold dark:text-navy text-paper px-12 py-5 text-sm uppercase tracking-widest font-bold hover:bg-gold dark:hover:bg-paper hover:text-navy transition-all">
+                <Link to="/admissions" className="bg-navy text-paper px-12 py-5 text-sm uppercase tracking-widest font-bold hover:bg-gold hover:text-navy transition-all">
                   Inquire Program
                 </Link>
               </div>

@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronDown, GraduationCap } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/src/lib/utils';
-import ThemeToggle from '../ThemeToggle';
-import { useTheme } from '../ThemeContext';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -21,7 +19,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +44,7 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-4 group">
             <span className={cn(
               "font-serif text-2xl tracking-[0.2em] uppercase transition-colors duration-500",
-              scrolled ? "text-paper" : theme === 'dark' ? "text-paper" : "text-navy"
+              scrolled ? "text-paper" : "text-navy"
             )}>
               Aurelius
             </span>
@@ -61,7 +58,7 @@ export default function Navbar() {
                 to={link.href}
                 className={cn(
                   'relative text-[11px] xl:text-[12px] uppercase tracking-[0.2em] xl:tracking-[0.3em] font-medium transition-all duration-300 hover:text-gold',
-                  scrolled ? 'text-paper/80' : theme === 'dark' ? 'text-paper' : 'text-navy',
+                  scrolled ? 'text-paper/80' : 'text-navy',
                   location.pathname === link.href && 'text-gold'
                 )}
               >
@@ -74,8 +71,6 @@ export default function Navbar() {
                 )}
               </Link>
             ))}
-            
-            <ThemeToggle scrolled={scrolled} />
             
             <Link 
               to="/admissions" 
@@ -111,15 +106,14 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed inset-0 z-[60] bg-paper dark:bg-navy flex flex-col p-8 md:p-12 transition-colors duration-500 overflow-hidden"
+            className="fixed inset-0 z-[60] bg-paper flex flex-col p-8 md:p-12 transition-colors duration-500 overflow-hidden"
           >
             <div className="flex justify-between items-center mb-16 md:mb-24">
-              <span className="font-serif text-2xl tracking-[0.2em] uppercase text-navy dark:text-paper">Aurelius</span>
+              <span className="font-serif text-2xl tracking-[0.2em] uppercase text-navy">Aurelius</span>
               <div className="flex items-center gap-3">
-                <ThemeToggle scrolled={true} />
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-navy dark:text-paper p-3 bg-navy/5 dark:bg-paper/5 border border-navy/10 dark:border-paper/10 rounded-full hover:bg-gold hover:text-navy transition-all"
+                  className="text-navy p-3 bg-navy/5 border border-navy/10 rounded-full hover:bg-gold hover:text-navy transition-all"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -139,7 +133,7 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                     className={cn(
                       "font-serif text-4xl md:text-6xl transition-all duration-300 flex items-center gap-6 group",
-                      location.pathname === link.href ? "text-gold" : "text-navy dark:text-paper hover:text-gold"
+                      location.pathname === link.href ? "text-gold" : "text-navy hover:text-gold"
                     )}
                   >
                     <span className="text-[10px] md:text-xs font-mono text-gold/40 group-hover:text-gold transition-colors font-bold tracking-widest mt-2">0{idx + 1}</span>
@@ -153,25 +147,25 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="mt-auto pt-10 border-t border-navy/5 dark:border-paper/5 flex flex-col gap-6"
+              className="mt-auto pt-10 border-t border-navy/5 flex flex-col gap-6"
             >
               <div className="grid grid-cols-2 gap-4">
                 <Link
                   to="/admissions"
                   onClick={() => setIsOpen(false)}
-                  className="bg-navy dark:bg-gold dark:text-navy text-paper px-6 py-5 text-[10px] uppercase tracking-[0.2em] font-black rounded-sm text-center shadow-lg active:scale-95 transition-all"
+                  className="bg-navy text-paper px-6 py-5 text-[10px] uppercase tracking-[0.2em] font-black rounded-sm text-center shadow-lg active:scale-95 transition-all"
                 >
                   Apply Now
                 </Link>
                 <Link
                   to="/virtual-tour"
                   onClick={() => setIsOpen(false)}
-                  className="bg-transparent border border-navy dark:border-gold text-navy dark:text-gold px-6 py-5 text-[10px] uppercase tracking-[0.2em] font-black rounded-sm text-center active:scale-95 transition-all"
+                  className="bg-transparent border border-navy text-navy px-6 py-5 text-[10px] uppercase tracking-[0.2em] font-black rounded-sm text-center active:scale-95 transition-all"
                 >
                   Virtual Tour
                 </Link>
               </div>
-              <div className="flex justify-between text-[10px] uppercase tracking-[0.3em] font-black text-navy/30 dark:text-paper/30 pb-4">
+              <div className="flex justify-between text-[10px] uppercase tracking-[0.3em] font-black text-navy/30 pb-4">
                 <span>Admissions: +44 123 456 789</span>
                 <div className="flex gap-4">
                   <span 

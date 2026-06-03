@@ -11,17 +11,17 @@ const LOCATIONS = [
   {
     id: 'grand-hall',
     name: 'The Grand Hall',
-    image: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=4000',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=4000',
     description: 'The architectural heart of Aurelius, where traditions meet innovation.',
     hotspots: [
       { position: [10, 0, -10], title: 'Original 18th Century Organ', detail: 'This pipe organ has been meticulously restored and is used for weekly assemblies.' },
-      { position: [-15, 2, 5], title: 'Stained Glass Dome', detail: 'The dome depicts the academy\'s four core virtues: Wisdom, Valor, Honor, and Grace.' }
+      { position: [-15, 2, 5], title: 'Grand Chandelier', detail: 'A magnificent centerpiece that illuminates the hall during evening ceremonies.' }
     ]
   },
   {
     id: 'library',
     name: 'The Athenaeum',
-    image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=4000',
+    image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=4000',
     description: 'Home to over 100,000 rare volumes and state-of-the-art digital archives.',
     hotspots: [
       { position: [0, 0, -20], title: 'Manuscript Vault', detail: 'Contains original letters from founding members dating back to 1982.' },
@@ -29,18 +29,27 @@ const LOCATIONS = [
     ]
   },
   {
+    id: 'science',
+    name: 'Innovation Lab',
+    image: 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&q=80&w=4000',
+    description: 'Cutting-edge facilities for advanced chemistry, physics, and robotics research.',
+    hotspots: [
+      { position: [10, 0, -15], title: 'Spectrometer', detail: 'High-precision equipment for molecular analysis.' }
+    ]
+  },
+  {
     id: 'sports',
     name: 'Athletic Pavilion',
-    image: 'https://images.unsplash.com/photo-1576267423445-b2e88a49612f?auto=format&fit=crop&q=80&w=4000',
+    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=4000',
     description: 'A professional-grade complex supporting 24 different Olympic and traditional sports.',
     hotspots: [
-      { position: [-10, -5, -15], title: 'Glass-walled Fencing Hall', detail: 'One of the finest fencing facilities in the UK.' }
+      { position: [-10, -5, -15], title: 'Training Floor', detail: 'Versatile space for various athletic disciplines and team practices.' }
     ]
   },
   {
     id: 'dorm',
     name: 'St. George Residence',
-    image: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&q=80&w=4000',
+    image: 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&q=80&w=4000',
     description: 'Luxury boarding that balances personal privacy with community building.',
     hotspots: [
       { position: [5, 2, -15], title: 'Communal Lounge', detail: 'The social hub of the house, where students gather for tea and discussion.' }
@@ -54,7 +63,7 @@ function Scene({ location }: { location: typeof LOCATIONS[0] }) {
   return (
     <>
       <mesh scale={[-1, 1, 1]}>
-        <sphereGeometry args={[50, 60, 40]} />
+        <sphereGeometry args={[50, 64, 32]} />
         <meshBasicMaterial map={texture} side={THREE.BackSide} />
       </mesh>
       

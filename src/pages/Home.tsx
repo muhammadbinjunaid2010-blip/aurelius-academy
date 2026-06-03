@@ -27,7 +27,7 @@ export default function Home() {
       <Hero />
 
       {/* Philosophy Section */}
-      <section className="py-24 px-6 md:px-12 bg-white dark:bg-navy-dark transition-colors duration-500">
+      <section className="py-24 px-6 md:px-12 bg-white transition-colors duration-500">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
@@ -37,14 +37,14 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <h4 className="text-gold uppercase tracking-[0.3em] text-xs font-bold mb-6">Our Philosophy</h4>
-              <h2 className="text-4xl md:text-6xl font-serif text-navy dark:text-paper leading-tight mb-8">
+              <h2 className="text-4xl md:text-6xl font-serif text-navy leading-tight mb-8">
                 Cultivating Minds, <br />
                 <span className="italic">Elevating Spirits</span>
               </h2>
-              <p className="text-navy/70 dark:text-paper/70 text-lg leading-relaxed mb-8 max-w-xl">
+              <p className="text-navy/70 text-lg leading-relaxed mb-8 max-w-xl">
                 At Aurelius Academy, we believe that education is more than just academic achievement. It is about the holistic development of an individual, combining rigorous intellectual pursuit with the refinement of character.
               </p>
-              <Link to="/programs" className="inline-flex items-center gap-2 text-navy dark:text-paper font-bold uppercase tracking-widest text-sm border-b-2 border-gold pb-1 hover:text-gold transition-colors">
+              <Link to="/programs" className="inline-flex items-center gap-2 text-navy font-bold uppercase tracking-widest text-sm border-b-2 border-gold pb-1 hover:text-gold transition-colors">
                 View our Ethos <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
@@ -69,7 +69,7 @@ export default function Home() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-24 px-6 md:px-12 bg-paper dark:bg-midnight transition-colors duration-500">
+      <section className="py-24 px-6 md:px-12 bg-paper transition-colors duration-500">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {features.map((feature, idx) => (
@@ -79,13 +79,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-10 bg-white dark:bg-navy border border-navy/5 dark:border-paper/5 shadow-sm hover:shadow-xl transition-all group"
+                className="p-10 bg-white border border-navy/5 shadow-sm hover:shadow-xl transition-all group"
               >
-                <div className="w-12 h-12 bg-navy dark:bg-midnight text-gold rounded-sm flex items-center justify-center mb-8 group-hover:bg-gold group-hover:text-navy transition-colors">
+                <div className="w-12 h-12 bg-navy text-gold rounded-sm flex items-center justify-center mb-8 group-hover:bg-gold group-hover:text-navy transition-colors">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-serif text-navy dark:text-paper mb-4">{feature.title}</h3>
-                <p className="text-navy/60 dark:text-paper/60 text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="text-2xl font-serif text-navy mb-4">{feature.title}</h3>
+                <p className="text-navy/60 text-sm leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>

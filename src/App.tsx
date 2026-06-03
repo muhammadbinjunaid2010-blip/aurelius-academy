@@ -5,7 +5,6 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import LoadingScreen from './components/LoadingScreen';
 import { AnimatePresence } from 'motion/react';
-import { ThemeProvider } from './components/ThemeContext';
 
 // Lazy load pages for performance
 const Home = lazy(() => import('./pages/Home'));
@@ -54,35 +53,33 @@ export default function App() {
   }, []);
 
   return (
-    <ThemeProvider>
-      <Router>
-        <ScrollToTop />
-        <AnimatePresence>
-          {loading && <LoadingScreen key="loader" />}
-        </AnimatePresence>
-        <div className="flex flex-col min-h-screen">
-          <Navbar />
-          <main className="flex-grow">
-            <Suspense fallback={
-              <div className="h-screen w-full bg-navy flex items-center justify-center">
-                <div className="w-12 h-12 border-2 border-gold border-t-transparent rounded-full animate-spin" />
-              </div>
-            }>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/programs" element={<Programs />} />
-                <Route path="/admissions" element={<Admissions />} />
-                <Route path="/fees" element={<Fees />} />
-                <Route path="/scholarships" element={<Scholarships />} />
-                <Route path="/campus-life" element={<CampusLife />} />
-                <Route path="/faq" element={<FAQ />} />
-                <Route path="/virtual-tour" element={<VirtualTour />} />
-              </Routes>
-            </Suspense>
-          </main>
-          <Footer />
-        </div>
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <ScrollToTop />
+      <AnimatePresence>
+        {loading && <LoadingScreen key="loader" />}
+      </AnimatePresence>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <Suspense fallback={
+            <div className="h-screen w-full bg-navy flex items-center justify-center">
+              <div className="w-12 h-12 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+            </div>
+          }>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/programs" element={<Programs />} />
+              <Route path="/admissions" element={<Admissions />} />
+              <Route path="/fees" element={<Fees />} />
+              <Route path="/scholarships" element={<Scholarships />} />
+              <Route path="/campus-life" element={<CampusLife />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/virtual-tour" element={<VirtualTour />} />
+            </Routes>
+          </Suspense>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }

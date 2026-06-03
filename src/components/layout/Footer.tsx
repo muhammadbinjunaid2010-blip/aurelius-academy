@@ -8,7 +8,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-navy dark:bg-navy-dark text-paper pt-24 pb-12 px-6 md:px-12 border-t border-white/5 transition-colors duration-500">
+    <footer className="bg-navy text-paper pt-24 pb-12 px-6 md:px-12 border-t border-white/5 transition-colors duration-500">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
         <div className="space-y-6 sm:col-span-2 lg:col-span-1">
           <Link to="/" className="flex items-center gap-3">
@@ -79,15 +79,15 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
           <p>© 2026 Aurelius Academy. Prestige in Education.</p>
           <a 
-            href="https://muhammad-developer.vercel.app"
+            href="https://mo-developer.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:text-gold transition-colors group"
           >
             <div className="w-5 h-5 rounded-full border border-white/10 flex items-center justify-center group-hover:border-gold transition-colors">
-              <span className="text-[8px] font-bold">M</span>
+              <span className="text-[8px] font-bold">MO</span>
             </div>
-            Designed & Managed by M
+            Built by Mo
           </a>
         </div>
         <div className="flex gap-8">

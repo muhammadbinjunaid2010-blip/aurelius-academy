@@ -16,11 +16,7 @@
 
 @layer base {
   body {
-    @apply bg-paper text-navy font-sans antialiased selection:bg-gold/30 transition-colors duration-500;
-  }
-
-  .dark body {
-    @apply bg-navy text-paper;
+    @apply bg-paper text-navy font-sans antialiased selection:bg-gold/30;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -34,10 +30,6 @@
 
 .glass-dark {
   @apply bg-navy/80 backdrop-blur-md border border-white/10;
-}
-
-.dark .glass-dark {
-  @apply bg-black/40 border-white/5;
 }
 
 /* Custom Scrollbar */
